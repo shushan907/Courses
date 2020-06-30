@@ -1,17 +1,87 @@
 .row {
     margin-top: 50px;
+    text-align: center;
+}
+
+.row > div {
+    position: relative;
 }
 
 .row > div > div{
     background-color: #006A4E;
-    height: 250px;
+    min-height: 330px;
+    max-height: 400px;
     margin-bottom: 50px;
     border-radius: 20px;
 }
 
 body {
     background-color: black;
+    color: white;
 }
+
 .nav-wrapper {
     background-color: #006A4E;
 }
+
+#add_Course {
+    text-align: center;
+}
+
+#add_Course input {
+    width: 200px;
+    padding-left: 10px;
+    color: white;
+}
+
+#addCourse {
+    background-color: #006A4E;
+    outline: none;
+    color: white;
+    border: none;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.row img {
+    margin-top: -45px;
+    height: 90px;
+    object-fit: contain; 
+    border-radius: 50%;
+}
+
+.row h5 {
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+    margin:0;
+}
+
+ .row p {
+     text-align: justify;
+     padding: 10px;
+     font-size: 14px;
+     text-indent: 15px;
+     margin: 0;
+     background-image: linear-gradient(black, #006A4E);
+     height: 150px;
+ }
+
+ .row span {
+     display: block;
+     font-size: 16px;
+     padding-bottom: 5px;
+ }
+
+ .row button {
+     background-color: black;
+     margin: 0 3px 0 3px;
+     width: 65px;
+     color: #006A4E;
+     font-weight: bold;
+     border: none;
+     outline: none;
+     border-radius: 10px;
+     height: 30px;
+     box-shadow: 2px 2px;
+ }

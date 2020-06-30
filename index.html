@@ -27,6 +27,17 @@
         <li><a href="#">SELECTED COURSES</a></li>
         <li><a href="#">CHOSEN COURSES</a></li>
     </ul>
+    
+    <div id='add_Course'>
+        <h2>Add Course</h2>
+        <input type="text" placeholder="Course Name" id="courseName">
+        <input type="text" placeholder="Course Price" id="coursePrice">
+        <input type="text" placeholder="Course Logo" id="courseLogo">
+        <input type="text" placeholder="Course Description" id="courseDescription" maxlength="190">
+        <input type="text" placeholder="Course Duration" id="courseDuration">
+
+        <button id="addCourse">Add Course</button>
+    </div>
 
     <div class="container">
         <div class="row">
@@ -42,7 +53,8 @@
     </div>
             
 
-
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
     <script src="main.js" type="module"></script>
 </body>
 </html>
