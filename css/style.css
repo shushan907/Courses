@@ -1,0 +1,10 @@
+.row {
+    margin-top: 50px;
+}
+
+.row > div > div{
+    background-color: #EE6E73;
+    height: 250px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+}
