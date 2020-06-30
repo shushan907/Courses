@@ -20,8 +20,17 @@ body {
     color: white;
 }
 
-.nav-wrapper {
+.tabs {
     background-color: #006A4E;
+    text-align: right;
+}
+
+.tabs .tab a{
+    color:white;
+}
+
+.tabs .tab a:hover{
+    color:black;
 }
 
 #add_Course {

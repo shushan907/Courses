@@ -26,6 +26,7 @@ export function firebaseSettings() {
             course_description: byId('courseDescription'),
             course_duration: byId('courseDuration')
         });
+
         document.getElementById('courseName').value = '';
         document.getElementById('coursePrice').value = '';
         document.getElementById('courseLogo').value = '';
@@ -36,8 +37,8 @@ export function firebaseSettings() {
     document.getElementById('addCourse').addEventListener('click', addCourse);
     
     const deleteCourse= (id) => {
-        courses.child(id).remove()
-    }
+        courses.child(id).remove();
+    };
     
     (function() {
         const courseList = document.querySelector('.row');
@@ -78,6 +79,14 @@ export function firebaseSettings() {
     
                 button.addEventListener('click', () => {
                     deleteCourse(data[0])
+                })
+
+                buttonAdd.addEventListener('click', () => {
+                    location.href = '#/selected_courses'
+                })
+
+                buttonEdit.addEventListener('click', () => {
+                    
                 })
             })
         })
