@@ -3,8 +3,15 @@
 }
 
 .row > div > div{
-    background-color: #EE6E73;
+    background-color: #006A4E;
     height: 250px;
     margin-bottom: 50px;
     border-radius: 20px;
+}
+
+body {
+    background-color: black;
+}
+.nav-wrapper {
+    background-color: #006A4E;
 }
