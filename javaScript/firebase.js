@@ -39,7 +39,7 @@ export function firebaseSettings() {
         courses.child(id).remove();
     };
 
-    const add = (data, val) => {
+    const add = (data, val, side) => {
         const selectCourse = document.querySelector('.selectCourse');
         const h5 = selectCourse.querySelector('h5');
         const p = selectCourse.querySelector('p');
@@ -56,6 +56,7 @@ export function firebaseSettings() {
         one.innerHTML = data[1].course_price;
         two.innerHTML = `<i class='far fa-calendar-alt' style='font-size:24px'></i> ${data[1].course_duration}`;
         button.innerHTML = val;
+        button.style = `${side}: 10px`;
     };
 
     document.getElementById('addCourse').addEventListener('click', () => {
@@ -92,7 +93,7 @@ export function firebaseSettings() {
                 span.innerHTML = data[1].course_price;
                 span2.innerHTML = `<i class='far fa-calendar-alt' style='font-size:24px'></i> ${data[1].course_duration}`;
                 button.innerHTML = 'Delete';
-                buttonAdd.innerHTML = 'Add';
+                buttonAdd.innerHTML = `Add`;
                 buttonEdit.innerHTML = 'Edit';
 
     //-------------------Append Childs---------------------------------------------------
@@ -109,23 +110,17 @@ export function firebaseSettings() {
                 
     // ------------------------buttons click event-----------------------------------------
                 button.addEventListener('click', () => {
-                    deleteCourse(data[0])
+                    deleteCourse(data[0]);
                 })
 
                 buttonAdd.addEventListener('click', () => {
-                    add(data, 'Add')
+                    add(data, 'Add', 'left');
                 })
 
                 buttonEdit.addEventListener('click', () => {
-                    add(data, 'Edit')
+                    add(data, 'Edit', 'right');
                 })
             })
         })
     })()
 }
-/*
-let a = document.querySelectorAll('.tabs li a');
-                    a[1].classList.add('active');
-                    a[0].classList.remove('active');
-                    a[2].classList.remove('active');
-*/

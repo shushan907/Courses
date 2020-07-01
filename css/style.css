@@ -118,8 +118,15 @@ footer {
 #selected_courses {
     width: 40%;
     margin: 0 auto;
+    padding-top: 50px;
 }
 
 .selectCourse {
     display: none;
+    position: relative;
+}
+
+.selectCourse button {
+    position: absolute;
+    bottom: 10px;
 }
