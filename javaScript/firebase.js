@@ -82,7 +82,7 @@ export function firebaseSettings() {
                 })
 
                 buttonAdd.addEventListener('click', () => {
-                    location.href = '#/selected_courses'
+                    
                 })
 
                 buttonEdit.addEventListener('click', () => {
@@ -92,3 +92,9 @@ export function firebaseSettings() {
         })
     })()
 }
+/*
+let a = document.querySelectorAll('.tabs li a');
+                    a[1].classList.add('active');
+                    a[0].classList.remove('active');
+                    a[2].classList.remove('active');
+*/
