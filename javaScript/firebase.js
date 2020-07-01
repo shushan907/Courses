@@ -1,3 +1,5 @@
+import { instance } from '../main.js';
+
 export function firebaseSettings() {
     var firebaseConfig = {
         apiKey: "AIzaSyDEmoq5dItu2tTMFoxYGrlKIY1ast9mEsU",
@@ -57,6 +59,7 @@ export function firebaseSettings() {
         two.innerHTML = `<i class='far fa-calendar-alt' style='font-size:24px'></i> ${data[1].course_duration}`;
         button.innerHTML = val;
         button.style = `${side}: 10px`;
+        instance.select('selected_courses');
     };
 
     document.getElementById('addCourse').addEventListener('click', () => {
@@ -122,5 +125,5 @@ export function firebaseSettings() {
                 })
             })
         })
-    })()
+    })();
 }
