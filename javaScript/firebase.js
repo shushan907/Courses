@@ -41,7 +41,7 @@ export function firebaseSettings() {
     };
     
     (function() {
-        const courseList = document.querySelector('.row');
+        const courseList = document.querySelector('.coursesList');
         courses.orderByKey().on('value', data => {
             courseList.innerHTML = '';
             Object.entries(data.val()).map((data) => {

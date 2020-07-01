@@ -10,30 +10,37 @@
     <title>Courses</title>
 </head>
 <body>
-    <div class="addTabs">
-        <ul class="tabs">
-            <li class="tab"><a href="#">COURSES</a></li>
-            <li class="tab"><a href="#/selected_courses">SELECTED COURSES</a></li>
-            <li class="tab"><a href="#/chosen_courses">CHOSEN COURSES</a></li>
-        </ul>
-    </div>
     
-    <div id='add_Course'>
-        <h2>Add Course</h2>
-        <input type="text" placeholder="Course Name" id="courseName">
-        <input type="text" placeholder="Course Price" id="coursePrice">
-        <input type="text" placeholder="Course Logo" id="courseLogo">
-        <input type="text" placeholder="Course Description" id="courseDescription" maxlength="190">
-        <input type="text" placeholder="Course Duration" id="courseDuration">
-
-        <button id="addCourse">Add Course</button>
-    </div>
-
-    <div class="container">
-        <div class="row">
-
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s3"><a href="#courses">COURSES</a></li>
+                <li class="tab col s3"><a href="#selected_courses">SELECTED COURSES</a></li>
+                <li class="tab col s3"><a href="#chosen_courses">CHOSEN COURSES</a></li>
+            </ul>
         </div>
-    </div>
+        <div id="courses" class='col s12'>
+            <div id='add_Course'>
+                <h2>Add Course</h2>
+                <input type="text" placeholder="Course Name" id="courseName">
+                <input type="text" placeholder="Course Price" id="coursePrice">
+                <input type="text" placeholder="Course Logo" id="courseLogo">
+                <input type="text" placeholder="Course Description" id="courseDescription" maxlength="190">
+                <input type="text" placeholder="Course Duration" id="courseDuration">
+        
+                <button id="addCourse" class='waves-effect waves-light'>Add Course</button>
+            </div>
+        
+            <div class="container">
+                <div class="row coursesList">
+        
+                </div>
+            </div>
+        </div>
+        <div id="selected_courses" class='col s12'>add/edit</div>
+        <div id="chosen_courses" class='col s12'>chosen</div>
+    
+            
+    
     <footer>
         <div class="footer-copyright">
             <div class="container">

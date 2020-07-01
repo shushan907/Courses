@@ -1,13 +1,13 @@
-.row {
+.coursesList {
     margin-top: 50px;
     text-align: center;
 }
 
-.row > div {
+.coursesList > div {
     position: relative;
 }
 
-.row > div > div{
+.coursesList > div > div{
     background-color: #006A4E;
     min-height: 330px;
     max-height: 400px;
@@ -29,8 +29,12 @@ body {
     color:white;
 }
 
-.tabs .tab a:hover{
-    color:black;
+.tabs .indicator {
+    background-color: grey;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+    color: black
 }
 
 #add_Course {
@@ -52,21 +56,21 @@ body {
     border-radius: 5px;
 }
 
-.row img {
+.coursesList img {
     margin-top: -45px;
     height: 90px;
     object-fit: contain; 
     border-radius: 50%;
 }
 
-.row h5 {
+.coursesList h5 {
     color: black;
     font-weight: bold;
     font-style: italic;
     margin:0;
 }
 
- .row p {
+ .coursesList p {
      text-align: justify;
      padding: 10px;
      font-size: 14px;
@@ -76,13 +80,13 @@ body {
      height: 150px;
  }
 
- .row span {
+ .coursesList span {
      display: block;
      font-size: 16px;
      padding-bottom: 5px;
  }
 
- .row button {
+ .coursesList button {
      background-color: black;
      margin: 0 3px 0 3px;
      width: 65px;
