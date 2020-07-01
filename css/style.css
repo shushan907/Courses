@@ -130,3 +130,23 @@ footer {
     position: absolute;
     bottom: 10px;
 }
+
+.checkout {
+    padding-top: 50px;
+    width: 40%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 5fr 1fr 3fr;
+}
+
+.checkout span {
+    text-align: left;
+    border-bottom: 1px solid white;
+    height: 46px;
+    line-height:46px;
+    padding-left: 20px;
+}
+
+.checkout input {
+    color: white;
+}

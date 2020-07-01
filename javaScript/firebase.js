@@ -10,7 +10,7 @@ export function firebaseSettings() {
         messagingSenderId: "891907238564",
         appId: "1:891907238564:web:c6493e7e43cbbdbb9f9431",
         measurementId: "G-ZB4V6RQJP0"
-      };
+    };
     
     firebase.initializeApp(firebaseConfig);
     const database = firebase.database();
@@ -59,7 +59,7 @@ export function firebaseSettings() {
         two.innerHTML = `<i class='far fa-calendar-alt' style='font-size:24px'></i> ${data[1].course_duration}`;
         button.innerHTML = val;
         button.style = `${side}: 10px`;
-        instance.select('selected_courses');
+        console.log(data)
     };
 
     document.getElementById('addCourse').addEventListener('click', () => {
@@ -118,6 +118,22 @@ export function firebaseSettings() {
 
                 buttonAdd.addEventListener('click', () => {
                     add(data, 'Add', 'left');
+                    document.querySelector('.selectCourse button').addEventListener('click', () => {
+                        instance.select('chosen_courses');
+                        const checkout = document.querySelector('.checkout');
+                        //checkout.innerHTML = '';
+                        const span1 = document.createElement('span');
+                        const span2 = document.createElement('span');
+                        const span3 = document.createElement('span');
+                        checkout.appendChild(span1);
+                        checkout.appendChild(span2);
+                        checkout.appendChild(span3);
+                        span1.innerHTML = data[1].course_name;
+                        span2.innerHTML = `<input type="number" value='1' min='0' max='5'>`;
+                        span3.innerHTML = `${parseInt(data[1].course_price) * 1000 * span2.querySelector('input').value} AMD`;
+                    });
+
+                    instance.select('selected_courses');
                 })
 
                 buttonEdit.addEventListener('click', () => {
