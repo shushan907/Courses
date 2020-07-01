@@ -34,18 +34,44 @@ export function firebaseSettings() {
         document.getElementById('courseDuration').value = '';
     };
     
-    document.getElementById('addCourse').addEventListener('click', addCourse);
     
-    const deleteCourse= (id) => {
+    const deleteCourse = (id) => {
         courses.child(id).remove();
     };
+
+    const add = (data, val) => {
+        const selectCourse = document.querySelector('.selectCourse');
+        const h5 = selectCourse.querySelector('h5');
+        const p = selectCourse.querySelector('p');
+        const img = selectCourse.querySelector('img');
+        const one = selectCourse.querySelector('.one');
+        const two = selectCourse.querySelector('.two');
+        const button = selectCourse.querySelector('button');
+        
+
+        selectCourse.style.display = 'block';
+        h5.innerHTML = data[1].course_name;
+        p.innerHTML = data[1].course_description;
+        img.src = data[1].course_logo;
+        one.innerHTML = data[1].course_price;
+        two.innerHTML = `<i class='far fa-calendar-alt' style='font-size:24px'></i> ${data[1].course_duration}`;
+        button.innerHTML = val;
+    };
+
+    document.getElementById('addCourse').addEventListener('click', () => {
+        if(byId('courseName') && byId('coursePrice') && 
+        byId('courseLogo') && byId('courseDescription') && byId('courseDuration')) {
+           addCourse();  
+        }
+    });
     
     (function() {
         const courseList = document.querySelector('.coursesList');
         courses.orderByKey().on('value', data => {
             courseList.innerHTML = '';
             Object.entries(data.val()).map((data) => {
-    
+
+    //-------------------Create Elements-----------------------------------------------
                 const div = document.createElement('div');
                 div.classList.add("col", "l4",  "m6", "s12");
                 const divContent = document.createElement('div');
@@ -58,6 +84,8 @@ export function firebaseSettings() {
                 const buttonEdit = document.createElement('button');
                 const span = document.createElement('span');
                 const span2 = document.createElement('span');
+
+    //-------------------Change created elements innerHTML-------------------------------
                 h5.innerHTML = data[1].course_name;
                 p.innerHTML = data[1].course_description;
                 img.src = data[1].course_logo;
@@ -66,6 +94,8 @@ export function firebaseSettings() {
                 button.innerHTML = 'Delete';
                 buttonAdd.innerHTML = 'Add';
                 buttonEdit.innerHTML = 'Edit';
+
+    //-------------------Append Childs---------------------------------------------------
                 divContent.appendChild(img);
                 divContent.appendChild(h5);
                 divContent.appendChild(p);
@@ -76,17 +106,18 @@ export function firebaseSettings() {
                 divContent.appendChild(buttonEdit);
                 div.appendChild(divContent)
                 courseList.appendChild(div);
-    
+                
+    // ------------------------buttons click event-----------------------------------------
                 button.addEventListener('click', () => {
                     deleteCourse(data[0])
                 })
 
                 buttonAdd.addEventListener('click', () => {
-                    
+                    add(data, 'Add')
                 })
 
                 buttonEdit.addEventListener('click', () => {
-                    
+                    add(data, 'Edit')
                 })
             })
         })
