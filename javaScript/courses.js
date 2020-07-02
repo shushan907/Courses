@@ -30,27 +30,6 @@ const addCourse = () => {
     document.getElementById('courseDuration').value = '';
 };
 
-const addSelect = (data) => {
-    instance.select('chosen_courses');
-    selectedCourses.innerHTML = '';
-
-    const checkout = document.querySelector('.checkout');
-    const span1 = document.createElement('span');
-    const span2 = document.createElement('span');
-    const span3 = document.createElement('span');
-
-    checkout.appendChild(span1);
-    checkout.appendChild(span2);
-    checkout.appendChild(span3);
-
-    span1.innerHTML = data[1].course_name;
-    span2.innerHTML = `<input type="number" value='1' min='0' max='5'>`;
-    span3.innerHTML = `${parseInt(data[1].course_price) * 1000 * span2.querySelector('input').value} AMD`;
-    span2.querySelector('input').addEventListener('change', () => {
-        span3.innerHTML = `${parseInt(data[1].course_price) * 1000 * span2.querySelector('input').value} AMD`;
-    })
-};
-
 const deleteCourse = (id) => {
     courses.child(id).remove();
 };
@@ -148,6 +127,7 @@ export function firebaseSettings() {
                     document.querySelector('.selectCourse button').addEventListener('click', () => {
                         instance.select('chosen_courses');
                         selectedCourses.innerHTML = '';
+                        document.getElementById('total').style.display = 'block';
                         addCheckout(data);
                     });
                 })
