@@ -10,6 +10,7 @@ import { app_firebase } from './firebase.js';
         document.getElementById('loader').style.display = 'none';
       }
     },
+    credentialHelper: firebaseui.auth.CredentialHelper.NONE,
     signInFlow: 'popup',
     signInSuccessUrl: './index.html',
     signInOptions: [

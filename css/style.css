@@ -146,7 +146,11 @@ footer {
     right: -200px;
 }
 
-.edit_input button {
+.edit_input input {
+    color: white;
+}
+
+.edit_input button, #total {
     background-color: #006A4E;
     outline: none;
     color: white;
@@ -154,6 +158,14 @@ footer {
     height: 35px;
     border-radius: 5px;
     width: 60px;
+}
+
+#total {
+    width: 80px;
+    position: absolute;
+    margin-top: 20px;
+    right: 280px;
+    display: none;
 }
 
 .checkout {
