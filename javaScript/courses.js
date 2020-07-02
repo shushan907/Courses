@@ -1,6 +1,15 @@
 import { instance } from '../main.js';
 import { database } from './firebase.js';
 
+const divContent = `<div class="container"><div class="row"><div class="col-content">
+    <div class='selectCourse'><img src="" alt=""><h5></h5><p></p><span class='one'>
+    </span><span class='two'></span><button></button></div></div></div></div>
+    <span class='add_edit'></span><span class ='edit_input'><input type="text">
+    <button class="waves-effect waves-light">Next</button></span>`;
+
+let selectedCourses = document.querySelector('#selected_courses');
+
+
 export function firebaseSettings() {
 
     const byId = (id) => document.getElementById(id).value
@@ -30,6 +39,7 @@ export function firebaseSettings() {
     };
 
     const add = (data, val, side) => {
+        selectedCourses.innerHTML = divContent;
         const selectCourse = document.querySelector('.selectCourse');
         const h5 = selectCourse.querySelector('h5');
         const p = selectCourse.querySelector('p');
@@ -110,8 +120,8 @@ export function firebaseSettings() {
                     add(data, 'Add', 'left');
                     document.querySelector('.selectCourse button').addEventListener('click', () => {
                         instance.select('chosen_courses');
+                        selectedCourses.innerHTML = '';
                         const checkout = document.querySelector('.checkout');
-                        //checkout.innerHTML = '';
                         const span1 = document.createElement('span');
                         const span2 = document.createElement('span');
                         const span3 = document.createElement('span');
@@ -126,9 +136,40 @@ export function firebaseSettings() {
 
                 buttonEdit.addEventListener('click', () => {
                     add(data, 'Edit', 'right');
-                    document.querySelector('.edit_input').style.display = 'block';
+                    let count = 0;
+                    document.querySelector('.selectCourse button').addEventListener('click', () => {
+
+                        document.querySelector('.edit_input input').value = data[1].course_name;
+                        document.querySelector('.edit_input').style.display = 'block';
+
+                        document.querySelector('.edit_input button').addEventListener('click', () => {
+                            if (count == 0) {
+                                courses.child(data[0]).update({'course_name': document.querySelector('.edit_input input').value});
+                                document.querySelector('.edit_input input').value = data[1].course_description;
+                                count++;
+                            } else if (count == 1) {
+                                courses.child(data[0]).update({'course_description': document.querySelector('.edit_input input').value});
+                                document.querySelector('.edit_input input').value = data[1].course_price;
+                                count++;
+                            } else if (count == 2) {
+                                courses.child(data[0]).update({'course_price': document.querySelector('.edit_input input').value});
+                                document.querySelector('.edit_input input').value = data[1].course_duration;
+                                count++;
+                            } else if (count == 3) {
+                                courses.child(data[0]).update({'course_duration': document.querySelector('.edit_input input').value});
+                                document.querySelector('.edit_input input').value = data[1].course_logo;
+                                document.querySelector('.edit_input button').innerHTML = 'Done';
+                                count++;
+                            } else if (count == 4) {
+                                selectedCourses.innerHTML = '';
+                                instance.select('courses');
+                            }
+                        })
+                    })
                 })
             })
         })
     })();
 }
+
+

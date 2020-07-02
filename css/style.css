@@ -146,6 +146,10 @@ footer {
     right: -200px;
 }
 
+.edit_input input {
+    color: white;
+}
+
 .edit_input button {
     background-color: #006A4E;
     outline: none;
