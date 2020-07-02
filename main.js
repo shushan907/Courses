@@ -1,4 +1,5 @@
 import { firebaseSettings } from './javaScript/courses.js';
+import { login } from './javaScript/firebase.js';
 
 export var instance;
 document.addEventListener('DOMContentLoaded', function() {
@@ -9,3 +10,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 firebaseSettings();
+login();
