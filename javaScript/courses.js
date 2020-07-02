@@ -47,7 +47,9 @@ export function firebaseSettings() {
         two.innerHTML = `<i class='far fa-calendar-alt' style='font-size:24px'></i> ${data[1].course_duration}`;
         button.innerHTML = val;
         button.style = `${side}: 10px`;
-        console.log(data)
+        document.querySelector('.add_edit').innerHTML = `${val} Course`;
+
+        instance.select('selected_courses');
     };
 
     document.getElementById('addCourse').addEventListener('click', () => {
@@ -120,12 +122,11 @@ export function firebaseSettings() {
                         span2.innerHTML = `<input type="number" value='1' min='0' max='5'>`;
                         span3.innerHTML = `${parseInt(data[1].course_price) * 1000 * span2.querySelector('input').value} AMD`;
                     });
-
-                    instance.select('selected_courses');
                 })
 
                 buttonEdit.addEventListener('click', () => {
                     add(data, 'Edit', 'right');
+                    document.querySelector('.edit_input').style.display = 'block';
                 })
             })
         })

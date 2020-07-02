@@ -118,7 +118,8 @@ footer {
 #selected_courses {
     width: 40%;
     margin: 0 auto;
-    padding-top: 50px;
+    padding-top: 100px;
+    position: relative;
 }
 
 .selectCourse {
@@ -129,6 +130,30 @@ footer {
 .selectCourse button {
     position: absolute;
     bottom: 10px;
+}
+
+.add_edit {
+    position: absolute;
+    top: 30px;
+    left: 35%;
+    font-size: 30px;
+}
+
+.edit_input {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: -200px;
+}
+
+.edit_input button {
+    background-color: #006A4E;
+    outline: none;
+    color: white;
+    border: none;
+    height: 35px;
+    border-radius: 5px;
+    width: 60px;
 }
 
 .checkout {
