@@ -1,6 +1,5 @@
-import { firebaseSettings } from './javaScript/firebase.js';
+import { firebaseSettings } from './javaScript/courses.js';
 
-firebaseSettings();
 export var instance;
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
@@ -8,3 +7,5 @@ document.addEventListener('DOMContentLoaded', function() {
     var el = document.querySelector('.tabs')
     instance = M.Tabs.init(el);
 });
+
+firebaseSettings();
