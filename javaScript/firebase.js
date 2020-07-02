@@ -29,7 +29,7 @@ export function login() {
         if(document.querySelector('.login').innerHTML == 'Log out') {
             firebase.auth().signOut();
         } else {
-            document.querySelector('.login').href = '/login.html?mode=select';
+            document.querySelector('.login').href = '/login.html';
         }
     });
 } 
