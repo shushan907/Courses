@@ -1,0 +1,32 @@
+body {
+    background-color: #006A4E;
+    text-align: center;
+    padding-top: 50px;
+    color: white;
+}
+
+div div {
+    background-color: black;
+}
+
+.mdl-button--raised.mdl-button--colored {
+    background-color: #006A4E;
+}
+
+.mdl-button--primary.mdl-button--primary {
+    color: white;
+}
+
+.firebaseui-textfield.mdl-textfield .firebaseui-input {
+    border-color: #006A4E;
+    padding: 5px;
+    color: white;
+}
+
+.mdl-button--raised.mdl-button--colored:hover {
+    background-color: #006A4E;
+}
+
+.firebaseui-input-invalid {
+    border-color: #006A4E;
+}
