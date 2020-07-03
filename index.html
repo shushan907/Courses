@@ -10,7 +10,7 @@
     <title>Courses</title>
 </head>
 <body>
-    
+
         <div class="col s12">
             <ul class="tabs">
                 <li class="tab col s3"><a class='active' href="#courses">COURSES</a></li>
@@ -43,15 +43,30 @@
             <div class='checkout'></div>
             <button id="total" class='waves-effect waves-light'>Checkout</button>
         </div>
-    
-    <footer>
-        <div class="footer-copyright">
-            <div class="container">
-            © 2020 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">Privace Policy</a>
+        
+        <div class='payList'>
+            <span class='x'>X</span>
+            <span style="font-size:25px">Your order</span>
+            <div class='pay'>
+
             </div>
+            <div class='showTotal'>
+                <span>Total: </span>
+                <span class="total_price"> </span>
+            </div>
+
+            <button class='paypal'><a target="_blank" href="https://www.paypal.com/ru/signin">Pay</a></button>
+            
         </div>
-    </footer>
+        
+        <footer>
+            <div class="footer-copyright">
+                <div class="container">
+                © 2020 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">Privace Policy</a>
+                </div>
+            </div>
+        </footer>
     <a class="login" href=""></a>
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
