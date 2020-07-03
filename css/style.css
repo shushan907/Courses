@@ -150,7 +150,7 @@ footer {
     color: white;
 }
 
-.edit_input button, #total {
+.edit_input button, #total, .paypal {
     background-color: #006A4E;
     outline: none;
     color: white;
@@ -158,6 +158,15 @@ footer {
     height: 35px;
     border-radius: 5px;
     width: 60px;
+}
+
+.paypal {
+    margin-top: 20px;
+}
+
+.paypal a {
+    text-decoration: none;
+    color: black
 }
 
 #total {

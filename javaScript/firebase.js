@@ -1,5 +1,4 @@
 export var app_firebase = {};
-
 var firebaseConfig = {
     apiKey: "AIzaSyDEmoq5dItu2tTMFoxYGrlKIY1ast9mEsU",
     authDomain: "staff-39706.firebaseapp.com",

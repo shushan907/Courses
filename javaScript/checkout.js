@@ -1,6 +1,6 @@
 import { database } from './firebase.js';
 
-const checkout = database.ref('/checkout');
+const checkout = database.ref(`/checkout`);
 
 const totalButton = () => {
     const checkoutList = document.querySelector('.checkout');
