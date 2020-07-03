@@ -1,13 +1,12 @@
 import { database } from './firebase.js';
 
 const checkout = database.ref('/checkout');
-const checkoutList = document.querySelector('.checkout');
 
 const totalButton = () => {
-    const span = checkoutList.querySelectorAll('span');
-    if(!span[3]) {
-        document.getElementById('total').style.display = 'none';
-    } else document.getElementById('total').style.display = 'inline';
+    const checkoutList = document.querySelector('.checkout');
+    if(checkoutList.innerHTML) {
+        document.getElementById('total').style.display = 'inline';
+    } else document.getElementById('total').style.display = 'none';
 };
 
 export const addCheckout = (data) => {
@@ -20,8 +19,9 @@ export const addCheckout = (data) => {
     })
 };
 
-(function() {
+(function () {
     checkout.orderByKey().on('value', checkoutdData => {
+        const checkoutList = document.querySelector('.checkout');
         checkoutList.innerHTML = '';
         Object.entries(checkoutdData.val()).map((checkoutdData) => {
 
@@ -47,3 +47,7 @@ export const addCheckout = (data) => {
         })
     })
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => totalButton(), 2000)
+});
