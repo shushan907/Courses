@@ -128,9 +128,18 @@ export function firebaseSettings() {
                         instance.select('chosen_courses');
                         selectedCourses.innerHTML = '';
                         document.getElementById('total').style.display = 'block';
-                        addCheckout(data);
+                        firebase.auth().onAuthStateChanged(function(user) {
+                            if (user) {
+                                const checkout = database.ref(`checkout/${user.uid}`);
+                                addCheckout(data, checkout);
+                            } else {
+                                alert('Please, login!!!');
+                                instance.select('courses');
+                                document.querySelector('#total').style.display = "none";
+                            }
+                        });
                     });
-                })
+                });
 
                 buttonEdit.addEventListener('click', () => {
                     

@@ -18,9 +18,9 @@ export const database = firebase.database();
 export function login() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-            document.querySelector('.login').innerHTML = 'Log out'
+            document.querySelector('.login').innerHTML = 'Log out';
         } else {
-            document.querySelector('.login').innerHTML = 'Log in'
+            document.querySelector('.login').innerHTML = 'Log in';
         }
     });
     
@@ -32,3 +32,4 @@ export function login() {
         }
     });
 } 
+
